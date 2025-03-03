@@ -10,7 +10,7 @@ root.title("STUDENT INFORMATION FORM")
 image_type = Image.open("C:\\Users\\USER\\Downloads\\F.U.T logo.jpeg")
 image_data = ImageTk.PhotoImage(image=image_type)
 root.iconphoto(True, image_data)
-root.geometry("300x300")
+root.geometry("300x280")
 root.config(bg="white")
 root.resizable(False, False)
 
