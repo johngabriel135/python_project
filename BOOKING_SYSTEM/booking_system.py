@@ -2,8 +2,8 @@ from tkinter import *
 from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import messagebox
-import time
-
+import tkinter as tk
+from time import strftime
 
 # calling my tkinter attributes
 root = Tk()
@@ -29,14 +29,23 @@ logout_butoon.place(x=1110,y=10)
 
 #date and time format
 # i define my time
-def update_clock():
-    current_time = time.strftime("%H:%M:%S")
-    sub_title.config(current_time)
-    sub_title.after(1000, update_clock)
-    update_clock
 
-#  creating my sub-title headings
-sub_title = Label(root, text=f"Welcome\t\t Time{update_clock} ",font=("agency fb",15, "bold"),bg="grey", fg="white")
+# Define the clock update function
+def update_clock():
+    current_time = strftime('%H:%M:%S %p')
+    clock_label.config(text=current_time)
+    clock_label.after(1000, update_clock)  # Update every 1000 milliseconds (1 second)
+
+# Create and configure the clock label
+clock_label = tk.Label(root, font=('calibri', 40, 'bold'), background='purple', foreground='white')
+clock_label.pack(anchor='center')
+
+# Start the clock
+update_clock()
+
+
+
+sub_title = Label(root, text=f"Welcome\t\t Time {} ",font=("agency fb",15, "bold"),bg="grey", fg="white")
 sub_title.place(x=0,y=70,relwidth=1)
 # left frame
 left_frame = Frame(root, bg="light grey")
@@ -128,6 +137,7 @@ entry_password.place(x=510,y=290,width=200)
 # Create and place the login button
 button_login = tk.Button(root, text="Login",bg="#cccccc",font=("agency fb",15,"bold"), command=authenticate)
 button_login.place(x=595,y=330,width=70)
+
 
 
 root.mainloop()
