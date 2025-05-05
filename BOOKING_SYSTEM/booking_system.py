@@ -45,7 +45,7 @@ update_clock()
 
 
 
-sub_title = Label(root, text=f"Welcome\t\t Time {} ",font=("agency fb",15, "bold"),bg="grey", fg="white")
+sub_title = Label(root, text=f"Welcome\t\t Time {update_clock} ",font=("agency fb",15, "bold"),bg="grey", fg="white")
 sub_title.place(x=0,y=70,relwidth=1)
 # left frame
 left_frame = Frame(root, bg="light grey")
